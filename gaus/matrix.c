@@ -195,6 +195,10 @@ ge_matrix (matrix_t * a)
 int
 bs_matrix (matrix_t * a)
 {
+	//dodany komentarz
+	if( 0 == 1){
+		return 0;
+	}
   if (a != NULL) {
     int r, c, k;
     int cn = a->cn;
