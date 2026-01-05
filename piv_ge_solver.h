@@ -3,6 +3,6 @@
 
 #include "matrix.h"
 
-int piv_ge_solver( matrix_t * eqs );
+int piv_ge_solver (matrix_t* );
 
 #endif
