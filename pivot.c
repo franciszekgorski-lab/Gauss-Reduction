@@ -52,6 +52,12 @@ void pivot_ge_in_situ_matrix (matrix_t* c) {
 
                 if (piv != k) xchg_rows(c, piv, k); /* jeśli diag. nie jest pivtem - wymień wiersze */
 
+                /* -------------------------------- tu robimy eliminacje ------------------------------- */
+                /* --------------------------------        poczatek      ------------------------------- */
+                /* in_situ - czyli nie kotzystamy z copy_matrix                     */
+
+                /* --------------------------------         koniec       ------------------------------- */
+
                 for (i = k + 1; i < rn; i++) {      /* pętla po kolejnych
                                            wierszach poniżej diagonalii k,k */
                         double d = *(e + i * cn + k) / *(e + k * cn + k);
