@@ -2,21 +2,16 @@
 #include <math.h>
 
 
-/**
- * Zwraca 0 - elimnacja zakonczona sukcesem
- * Zwraca 1 - macierz osobliwa - dzielenie przez 0
- */
+
 int eliminate(Matrix *mat, Matrix *b){
-	//int row=0; // obecny wiersz
-    /**
-	 * dla kazdej kolumny szukamy najwiekszej liczby,
-	 *  zamieniamy jej wiersz z obecnym wierszem
-	 * 
-	*/
 	for (int c = 0; c< mat->r-1; c++){
 		int biggest = c; // wiersz zawierajacy najwiekszy abs numer w tej kolumnie
 		for ( int i = c+1; i< mat->r; i++){
 			biggest =fabs(mat->data[i][c]) > fabs(mat->data[biggest][c]) ?  i : biggest;
+		}
+		//sprawdzamy czy pivot jest rowny 0 - macierz osobliwa
+		if(fabs(mat->data[biggest][c])<1e-12){
+			return 1;
 		}
 		// podmieniamy wiersze aktualny z biggest
 		if(biggest != c){
