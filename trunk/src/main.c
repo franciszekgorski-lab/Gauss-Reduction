@@ -18,7 +18,7 @@ int main(int argc, char ** argv) {
 
 	res = eliminate(A,b);
 	x = createMatrix(b->r, 1);
-	if (x != NULL) {
+	if (x != NULL && res != 1) {
 		res = backsubst(x,A,b);
 
 		printToScreen(x);
