@@ -22,9 +22,9 @@ int main(int argc, char ** argv) {
 		res = backsubst(x,A,b);
 
 		printToScreen(x);
-	  freeMatrix(x);
+	        freeMatrix(x);
 	} else {
-					fprintf(stderr,"Błąd! Nie mogłem utworzyć wektora wynikowego x.\n");
+	        fprintf(stderr,"Błąd! Nie mogłem utworzyć wektora wynikowego x.\n");
 	}
 
 	freeMatrix(A);
