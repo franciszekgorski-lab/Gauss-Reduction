@@ -15,6 +15,21 @@ int main(int argc, char ** argv) {
 	if (b == NULL) return -2;
 	printToScreen(A);
 	printToScreen(b);
+        
+	if (A->r != b->r) {
+		fprintf(stderr, "Błąd! Liczba wierszy macierzy A (%d) musi być równa liczbie wierszy wektora b (%d).\n", A->r, b->r);
+		freeMatrix(A);
+		freeMatrix(b);
+		return -4;
+	}
+	
+	if (b->c != 1) {
+		fprintf(stderr, "Błąd! Wektor b musi mieć dokładnie 1 kolumnę (ma %d).\n", b->c);
+		freeMatrix(A);
+		freeMatrix(b);
+		return -5;
+	}
+
 
 	res = eliminate(A,b);
 	x = createMatrix(b->r, 1);
